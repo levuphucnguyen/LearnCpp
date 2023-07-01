@@ -17,7 +17,8 @@ int main(){
     freopen("songuyento.out", "w", stdout);
     long long n;
     cin >> n;
-    if (prime(n)) cout << "YES";
+    if (n <=2 && n >= 0) cout << "NO";
+    else if (prime(n)) cout << "YES";
     else cout << "NO";
     return 0;
 }
