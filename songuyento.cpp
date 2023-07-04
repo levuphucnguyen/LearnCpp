@@ -1,7 +1,7 @@
-
 #include <math.h>
-#include <cstdio>
 #include <iostream>
+#include <fstream>
+#define endl "\n"
 using namespace std;
 
 bool prime(long long n) {
@@ -13,8 +13,10 @@ bool prime(long long n) {
     return true;
 }
 int main(){
-    freopen("songuyento.inp", "r", stdin);
-    freopen("songuyento.out", "w", stdout);
+    ifstream cin("songuyento.inp");
+    ofstream cout("songuyento.out");
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
     long long n;
     cin >> n;
     if (n <=2 && n >= 0) cout << "NO";
