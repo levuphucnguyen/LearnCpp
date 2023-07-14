@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <math.h>
 #define endl "\n"
 
 using namespace std;
