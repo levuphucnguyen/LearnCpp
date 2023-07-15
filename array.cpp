@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <set>
 #define endl "\n"
 
 using namespace std;
@@ -15,22 +16,17 @@ int main(){
     while (T--) {
         int n;
         cin >> n;
-        long long A[n];
-        for (long long &x : A) cin >> x;
-        for (int i = 0; i < n; ++i){
-            for (int x = 0; x < n; x++) {
-                if (A[x] == i){
-                    A[i] = i;
-                }
-            }
+        int A[n];
+        for (int &i : A) cin >> i;
+        set<int> a;
+        for (int i : A) a.insert(i);
+        int res = 1;
+        while (1) {
+            if (a.count(res)) {
+                cout << res << endl;
+                break;
+            } else ++res;
         }
-        for (int y = 0; y < n; ++y) {
-                if (A[y] != y){
-                    A[y]= -1;
-                }
-        }
-        for (int z : A) cout << z << " ";
-        cout << endl;
     }
     return 0;
 }
