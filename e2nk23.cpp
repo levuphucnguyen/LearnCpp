@@ -39,7 +39,7 @@ int main(){
         }
         cce++;
     }
-    unsigned int res = bc * br;
+    unsigned long long res = bc * br;
     cout << res;
     return 0;
 }
