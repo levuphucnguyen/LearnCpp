@@ -25,7 +25,7 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int x : a) cin >> x;
+    for (int &x : a) cin >> x;
     int k;
     cin >> k;
     // find all divisors of k
