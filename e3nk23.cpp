@@ -8,9 +8,9 @@
 
 using namespace std;
 
-int countxinvector(int x; vector<int> v) {
+int countxinvector(int x, vector<int> v) {
     int cnt;
-    for (i : v) {
+    for (int i : v) {
         if (i == x) cnt++;
     }
     return cnt;
@@ -37,7 +37,7 @@ int main() {
         }
     }
     int pref[n+1]; pref[0] = 0
-    for (int i = 1, i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         pref[i] = pref[i-1] + a[i-1];
     }
     vector<int> subsum
