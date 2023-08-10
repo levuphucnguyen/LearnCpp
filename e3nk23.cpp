@@ -31,16 +31,16 @@ int main() {
     // find all divisors of k
     vector<pair<int, int>> divk;
     //divk[].first is the smaller divisor
-    for (i = 1; i <= sqrt(k); i++) {
+    for (int i = 1; i <= sqrt(k); i++) {
         if (k % i == 0) {
-            divk.push_back(make_pair(i, k/i))
+            divk.push_back(make_pair(i, k/i));
         }
     }
-    int pref[n+1]; pref[0] = 0
+    int pref[n+1]; pref[0] = 0;
     for (int i = 1; i <= n; i++) {
         pref[i] = pref[i-1] + a[i-1];
     }
-    vector<int> subsum
+    vector<int> subsum;
     for (int beg = 0; beg < n; beg++) {
         for (int end = 0; end < n; end++) {
             subsum.push_back(pref[end+1] - pref[beg]);
@@ -48,7 +48,7 @@ int main() {
     }
     int res = 0;
     for (pair<int, int> div : divk) {
-        res += (countxinvector(div.first, subsum) * countxinvector(div.second, subsum))
+        res += (countxinvector(div.first, subsum) * countxinvector(div.second, subsum));
     }
     cout << res;
     return 0;
