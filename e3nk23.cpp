@@ -2,6 +2,7 @@
 #include <fstream>
 #include <set>
 #include <math.h>
+#include <vector>
 
 #define endl "\n"
 
