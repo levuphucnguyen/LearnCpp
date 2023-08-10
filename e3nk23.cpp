@@ -9,7 +9,7 @@
 using namespace std;
 
 int countxinvector(int x, vector<int> v) {
-    int cnt;
+    int cnt = 0;
     for (int i : v) {
         if (i == x) cnt++;
     }
@@ -50,6 +50,6 @@ int main() {
     for (pair<int, int> div : divk) {
         res += (countxinvector(div.first, subsum) * countxinvector(div.second, subsum));
     }
-    cout << res;
+    cout << res * 2;
     return 0;
 }
