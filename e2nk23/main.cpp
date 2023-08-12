@@ -22,18 +22,18 @@ int main(){
         ++posN[i];
     }
     int cntM = 0, cntN = 0, blankM, blankN;
-    for (map<int, int>::iterator it = posM.begin(); cntM < 2*K; ++it) {
+    for (map<int, int>::iterator it = posM.begin(); cntM < 2*K; it++) {
         cntM += (*it).second;
         if (cntM == 2*K) {
-            blankM = (*(it++)).first - (*it).first - 1;
+            blankM = - (*it).first + (*(it++)).first;
         }
     }
-    for (map<int, int>::iterator it = posN.begin(); cntN < 2*K; ++it) {
+    for (map<int, int>::iterator it = posN.begin(); cntN < 2*K; it++) {
         cntN += (*it).second;
         if (cntN == 2*K) {
-            blankN = (*(it++)).first - (*it).first - 1;
+            blankN = - (*it).first + (*(it++)).first;
         }
     }
-    cout << (blankM + 1) * (blankN + 1);
+    cout << blankM * blankN;
     return 0;
 }
