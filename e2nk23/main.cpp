@@ -1,5 +1,6 @@
 #include <fstream>
 #include <map>
+#include <iterator>
 
 using namespace std;
 
@@ -25,13 +26,13 @@ int main(){
     for (map<int, int>::iterator it = posM.begin(); cntM < 2*K; it++) {
         cntM += (*it).second;
         if (cntM == 2*K) {
-            blankM = - (*it).first + (*(it++)).first;
+            blankM = (*next(it, 1)).first - (*it).first;
         }
     }
     for (map<int, int>::iterator it = posN.begin(); cntN < 2*K; it++) {
         cntN += (*it).second;
         if (cntN == 2*K) {
-            blankN = - (*it).first + (*(it++)).first;
+            blankN = (*next(it, 1)).first - (*it).first;
         }
     }
     cout << blankM * blankN;
